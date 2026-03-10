@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+  #news-track {
+    will-change: transform;
+    display: flex;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .news-item { transition: opacity 0.5s; }
+  .news-item:not(.active) { opacity: 0.4; cursor: pointer; }

@@ -1,0 +1,650 @@
+<!doctype html>
+    <html lang="es">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>UTU - Patrimonio y Preservación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Noto+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <link rel="stylesheet" href="dist/styles.css">
+    </head>
+
+    <body class="font-montserrat antialiased">
+
+    <!-- menu de navegación-->
+    <header id="main-header" class="fixed top-0 left-0 w-full h-[80px] bg-cc_purpura border-b border-gray-100 transition-all duration-500 z-[100] flex items-center">
+        <div id="header-container" class="max-w-7xl mx-auto px-6 w-full h-full flex justify-between items-center transition-all duration-500 rounded-b-none">
+        
+        <a href="/">
+            <img id="header-logo" class="h-[40px] object-contain w-auto transition-all duration-500 hover:scale-105" src="src/images/logos/Logo nuevo-09.png" alt="Logo UTU">
+        </a>
+        
+        <nav class="hidden md:block">
+        <ul id="nav-links" class="flex justify-center items-center text-white gap-x-8 font-semibold text-[12px] tracking-widest transition-colors duration-500">
+            <li class="cursor-pointer hover:opacity-70 uppercase">Home</li>
+            <li class="cursor-pointer hover:opacity-70 uppercase">Nosotros</li>
+            <li class="cursor-pointer hover:opacity-70 uppercase">Prensa</li>
+            <li class="cursor-pointer hover:opacity-70 uppercase relative group">
+            <a href="#donaciones" class="flex items-center gap-1">
+                Donaciones
+                <span class="absolute -top-2 -right-3 text-cc_pink text-sm font-black px-1 py-0.5 rounded-sm tracking-widest leading-none">♥</span>
+            </a>
+            </li>
+            <li class="cursor-pointer hover:opacity-70 uppercase">Contacto</li>
+        </ul>
+        </nav>
+
+        <div class="flex items-center">
+        <button id="hamburger" class="group flex items-center gap-3 p-2 transition-all">
+            <div class="bg-cc_purpura group-hover:bg-cc_purpura/80 p-2 rounded-sm transition-colors" id="hamburger-bg">
+                <svg id="hamburger-icon" class="h-5 w-5 text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m4 6h16"></path>
+                </svg>
+            </div>
+        </button>
+        </div>
+    </div>
+    </header>
+
+    <!-- submenú -->
+    <div id="side-menu" class="fixed inset-0 z-[110] invisible transition-all duration-300">
+        <div id="menu-overlay" class="absolute inset-0 bg-black/60 opacity-0 transition-opacity duration-300"></div>
+        
+        <aside id="menu-content" class="absolute right-0 top-0 h-full w-[300px] md:w-[400px] bg-cc_purpura translate-x-full transition-transform duration-300 ease-in-out p-10 flex flex-col justify-center">
+        <button id="close-menu" class="absolute top-6 right-6 text-white hover:rotate-90 transition-transform">
+            <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+
+        <ul class="flex flex-col gap-y-6 text-white font-montserrat">
+            
+            <li class="group md:hidden">
+                <a href="#" class="font-light hover:pl-4 transition-all duration-300 flex items-center gap-3"><span class="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Home</a>
+            </li>
+
+            <li class="group md:hidden">
+                <a href="#" class="font-light hover:pl-4 transition-all duration-300 flex items-center gap-3"><span class="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Nosotros</a>
+            </li>
+
+            <li class="group md:hidden">
+                <a href="#" class="font-light hover:pl-4 transition-all duration-300 flex items-center gap-3"><span class="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Prensa</a>
+            </li>
+
+            <li class="group md:hidden">
+                <a href="#donaciones" class="font-light hover:pl-4 transition-all duration-300 flex items-center gap-3">
+                <span class="w-2 h-2 bg-cc_pink rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                Donaciones <span class="ml-1 text-cc_pink text-xs">♥</span>
+                </a>
+            </li>
+
+            <li class="group md:hidden">
+                <a href="#" class="font-light hover:pl-4 transition-all duration-300 flex items-center gap-3"><span class="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>Contacto</a>
+            </li>
+
+            <div class="my-5 border-t border-white/20 text-white/50 text-xs tracking-widest md:hidden"></div>
+
+            
+            <li class="group ">
+            <a href="#" class="font-light hover:pl-4 transition-all duration-300 flex items-center gap-3">
+                <span class="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                Muestras
+            </a>
+            </li>
+            <li class="group">
+            <a href="#" class="font-light hover:pl-4 transition-all duration-300 flex items-center gap-3">
+                <span class="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                La Cultura en el Centro
+            </a>
+            </li>
+            <li class="group">
+            <a href="#" class="font-light hover:pl-4 transition-all duration-300 flex items-center gap-3">
+                <span class="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                Orquesta Institucional
+            </a>
+            </li>
+            <li class="group">
+            <a href="#" class="font-light hover:pl-4 transition-all duration-300 flex items-center gap-3">
+                <span class="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                Laboratorio Fotográfico
+            </a>
+            </li>
+            <li class="group">
+            <a href="#" class="font-light hover:pl-4 transition-all duration-300 flex items-center gap-3">
+                <span class="w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></span>
+                UTU Cultural Podcast
+            </a>
+            </li>
+        </ul>
+
+        <div class="my-5 pt-5 md:mt-20 md:pt-10 border-t border-white/20 text-white/50 text-xs tracking-widest">
+            División Comunicaciones y Cultura - Centro Cultural
+        </div>
+        </aside>
+    </div>
+
+    <main>
+        <!-- banner hero home — "Qué hacer en el Centro Cultural" -->
+        <!--
+        Hero rediseñado: 3 tarjetas verticales (portrait) con imagen de fondo,
+        overlay degradado y texto superpuesto. Mobile: apiladas. Desktop: 3 columnas 100vh.
+        -->
+        <section id="presentacion" class="w-full relative overflow-hidden h-auto md:h-[calc(100vh-80px)] mt-[80px]">
+            <!-- Título flotante (desktop) -->
+            <!--
+            <div class="absolute top-1/3 left-0 w-full z-20 pointer-events-none hidden md:flex flex-col items-center pt-10">
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-lg text-white">
+                Patrimonio, Educación <br> <span class="text-white/90 font-light italic">y Preservación</span>
+                </h1>
+                <p class="font-light text-lg md:text-xl max-w-2xl opacity-90">
+                Explora la historia y el legado educativo de nuestra institución a través de una mirada moderna y comprometida.
+                </p>
+            </div>
+            -->
+
+            <div class="grid grid-cols-1 md:grid-cols-3 h-auto md:h-[calc(100vh-80px)]">
+
+                <!-- Tarjeta 1: Sala de Exposiciones -->
+                <div class="relative overflow-hidden h-[calc(100vh-80px)] md:h-full group cursor-pointer">
+                    <img src="src/images/home/Sala de Exposiciones.jpeg"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Sala de Exposiciones">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/50 transition-all duration-500 group-hover:from-cc_purpura/80 group-hover:via-cc_purpura/20"></div>
+                    <span class="absolute top-6 left-6 text-white/10 font-black text-[80px] leading-none select-none z-10">01</span>
+                    <div class="absolute bottom-0 left-0 w-full p-8 z-10 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <span class="text-cc_pink text-[10px] font-black uppercase tracking-[0.35em] block mb-2">Texto texto · Texto</span>
+                        <h2 class="text-white text-3xl font-extrabold leading-tight mb-3 drop-shadow-lg">Sala de<br>Exposiciones</h2>
+                        <p class="text-white/75 text-sm leading-relaxed max-w-xs opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. In iusto ratione assumenda facere?
+                        </p>
+                        <div class="flex items-center gap-2 mt-5 text-white font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150">
+                        Ver exposiciones
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-0 h-1 bg-cc_pink group-hover:w-full transition-all duration-700"></div>
+                </div>
+
+                <!-- Tarjeta 2: Museo Figari (central, levemente elevada en desktop) -->
+                <div class="relative overflow-hidden h-[calc(100vh-80px)] md:h-full group cursor-pointer z-10">
+                    <img src="src/images/home/Museo Institucional.jpeg"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Museo Figari">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/55 transition-all duration-500 group-hover:from-cc_gold/80 group-hover:via-cc_gold/20"></div>
+
+                    <span class="absolute top-6 left-6 text-white/10 font-black text-[80px] leading-none select-none z-10">02</span>
+                    <div class="absolute bottom-0 left-0 w-full p-8 z-10 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <span class="text-cc_gold text-[10px] font-black uppercase tracking-[0.35em] block mb-2">texto texto · texto</span>
+                        <h2 class="text-white text-3xl font-extrabold leading-tight mb-3 drop-shadow-lg">Museo<br>"Dr. Pedro Figari"</h2>
+                        <p class="text-white/75 text-sm leading-relaxed max-w-xs opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, in.
+                        </p>
+                        <div class="flex items-center gap-2 mt-5 text-white font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150">
+                        Agendar visita grupal
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-0 h-1 bg-cc_gold group-hover:w-full transition-all duration-700"></div>
+                </div>
+
+                <!-- Tarjeta 3: Hall de entrada -->
+                <div class="relative overflow-hidden h-[calc(100vh-80px)] md:h-full group cursor-pointer">
+                    <img src="src/images/home/Hall de Entrada.jpeg"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Laboratorio Fotografico">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/50 transition-all duration-500 group-hover:from-cc_purpura/80 group-hover:via-cc_purpura/20"></div>
+                    <span class="absolute top-6 left-6 text-white/10 font-black text-[80px] leading-none select-none z-10">03</span>
+                    <div class="absolute bottom-0 left-0 w-full p-8 z-10 translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                        <span class="text-cc_pink text-[10px] font-black uppercase tracking-[0.35em] block mb-2">texto · texto</span>
+                        <h2 class="text-white text-3xl font-extrabold leading-tight mb-3 drop-shadow-lg">Hall<br>de entrada</h2>
+                        <p class="text-white/75 text-sm leading-relaxed max-w-xs opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero eius porro placeat.
+                        </p>
+                        <div class="flex items-center gap-2 mt-5 text-white font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150">
+                        Conocer el laboratorio
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                        </div>
+                    </div>
+                    <div class="absolute bottom-0 left-0 w-0 h-1 bg-cc_pink group-hover:w-full transition-all duration-700"></div>
+                </div>
+
+            </div>
+
+            <!-- Titulo mobile (debajo del grid) -->
+            <div class="md:hidden bg-cc_purpura text-white text-center py-6 px-4">
+                <p class="text-[10px] tracking-[0.35em] uppercase opacity-70 mb-1">Centro Cultural UTU</p>
+                <h1 class="text-2xl font-extrabold">Que podes hacer <span class="text-cc_pink italic font-light">hoy aqui?</span></h1>
+            </div>
+
+        </section>
+
+        <!-- horarios y contacto -->
+        <section id="horarios" class="relative w-full bg-cc_purpura/95 backdrop-blur-sm text-white border-t border-white/10">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-white/20 py-6">
+            
+            <div class="flex flex-col items-center justify-center py-4 md:py-0 px-4 text-center">
+                <p class="text-[11px] uppercase tracking-[0.2em] opacity-70 mb-1">Horarios y Ubicación</p>
+                <p class="font-bold text-sm text-white">Lunes a Viernes: 9:00 a 17:00 hs</p>
+                <p class="text-xs opacity-80">Gonzalo Ramírez 1674</p>
+            </div>
+
+            <div class="flex flex-col items-center justify-center py-4 md:py-0 px-4">
+                <p class="text-[11px] uppercase tracking-[0.2em] opacity-70 mb-3">Conectate</p>
+                <div class="flex gap-x-6 justify-center items-center">
+                <a href="#" class="hover:scale-110 transition-transform">
+                    <svg class="h-8" viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>youtube [#168]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289" id="youtube-[#168]"> </path> </g> </g> </g> </g></svg>
+                </a>
+                <a href="#" class="hover:scale-110 transition-transform">
+                    <svg class="h-10" fill="#fff" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20.445 5h-8.891A6.559 6.559 0 0 0 5 11.554v8.891A6.559 6.559 0 0 0 11.554 27h8.891a6.56 6.56 0 0 0 6.554-6.555v-8.891A6.557 6.557 0 0 0 20.445 5zm4.342 15.445a4.343 4.343 0 0 1-4.342 4.342h-8.891a4.341 4.341 0 0 1-4.341-4.342v-8.891a4.34 4.34 0 0 1 4.341-4.341h8.891a4.342 4.342 0 0 1 4.341 4.341l.001 8.891z"></path><path d="M16 10.312c-3.138 0-5.688 2.551-5.688 5.688s2.551 5.688 5.688 5.688 5.688-2.551 5.688-5.688-2.55-5.688-5.688-5.688zm0 9.163a3.475 3.475 0 1 1-.001-6.95 3.475 3.475 0 0 1 .001 6.95zM21.7 8.991a1.363 1.363 0 1 1-1.364 1.364c0-.752.51-1.364 1.364-1.364z"></path></g></svg>
+                </a>
+                <a href="#" class="hover:scale-110 transition-transform">
+                    <svg class="h-8" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>spotify [#ffffff]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7479.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M99.915,7327.865 C96.692,7325.951 91.375,7325.775 88.297,7326.709 C87.803,7326.858 87.281,7326.58 87.131,7326.085 C86.981,7325.591 87.26,7325.069 87.754,7324.919 C91.287,7323.846 97.159,7324.053 100.87,7326.256 C101.314,7326.52 101.46,7327.094 101.196,7327.538 C100.934,7327.982 100.358,7328.129 99.915,7327.865 L99.915,7327.865 Z M99.81,7330.7 C99.584,7331.067 99.104,7331.182 98.737,7330.957 C96.05,7329.305 91.952,7328.827 88.773,7329.792 C88.36,7329.916 87.925,7329.684 87.8,7329.272 C87.676,7328.86 87.908,7328.425 88.32,7328.3 C91.951,7327.198 96.466,7327.732 99.553,7329.629 C99.92,7329.854 100.035,7330.334 99.81,7330.7 L99.81,7330.7 Z M98.586,7333.423 C98.406,7333.717 98.023,7333.81 97.729,7333.63 C95.381,7332.195 92.425,7331.871 88.944,7332.666 C88.609,7332.743 88.274,7332.533 88.198,7332.197 C88.121,7331.862 88.33,7331.528 88.667,7331.451 C92.476,7330.58 95.743,7330.955 98.379,7332.566 C98.673,7332.746 98.766,7333.129 98.586,7333.423 L98.586,7333.423 Z M94,7319 C88.477,7319 84,7323.477 84,7329 C84,7334.523 88.477,7339 94,7339 C99.523,7339 104,7334.523 104,7329 C104,7323.478 99.523,7319.001 94,7319.001 L94,7319 Z" id="spotify-[#ffffff]"> </path> </g> </g> </g> </g></svg>
+                </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col items-center justify-center py-4 md:py-0 px-4">
+                <p class="text-[11px] uppercase tracking-[0.2em] opacity-70 mb-2">¿Querés conocernos?</p>
+                <button class="border border-white/40 hover:bg-white hover:text-cc_purpura px-4 py-1.5 rounded-full text-[10px] font-bold uppercase transition-all">
+                Agendar Visita
+                </button>
+            </div>
+
+            </div>
+        </section>
+
+        <!-- noticias -->
+        <section id="noticias" class="w-full py-20 overflow-hidden max-w-7xl mx-auto">
+            <div class="relative w-full">
+                <div id="news-track" class="flex cursor-grab active:cursor-grabbing">
+                
+                <div class="news-item flex-[0_0_80vw] px-2 md:px-4" data-index="0">
+                    <div class="relative h-[500px] md:h-[600px] overflow-hidden group transition-all duration-500 active">
+                    <img src="https://www.utu.edu.uy/wp-content/uploads/2026/02/DSC1436-1024x684.jpg" class="w-full h-full object-cover grayscale transition-all duration-700 group-[.active]:grayscale-0 group-[.active]:scale-105" alt="Noticia 1">
+                    <div class="news-content absolute bottom-10 left-0 bg-white/95 p-8 max-w-[85%] md:max-w-[60%] opacity-0 translate-y-10 transition-all duration-500 group-[.active]:opacity-100 group-[.active]:translate-y-0 delay-300 pointer-events-none">
+                        <h4 class="text-cc_purpura font-black text-2xl mb-2">Activación Horizontal: una propuesta que invita al público a crear junto a Magela Ferrero</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Este jueves 26 de febrero, en la Sala de Exposiciones de UTU Central, tuvo lugar la inauguración de esta activación a cargo de Magela Ferrero, caracterizada por su talanto interactivo, colectivo y participativo, mediando entre su obra y la libre creación de los participantes.</p>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="news-item flex-[0_0_80vw] px-2 md:px-4" data-index="1">
+                    <div class="relative h-[500px] md:h-[600px] overflow-hidden group transition-all duration-500">
+                    <img src="https://www.utu.edu.uy/wp-content/uploads/2026/02/DSC09893-1024x683.jpg" class="w-full h-full object-cover grayscale transition-all duration-700 group-[.active]:grayscale-0 group-[.active]:scale-105" alt="Noticia 2">
+                    <div class="news-content absolute bottom-10 left-0 bg-white/95 p-8 max-w-[85%] md:max-w-[60%] opacity-0 translate-y-10 transition-all duration-500 group-[.active]:opacity-100 group-[.active]:translate-y-0 delay-300 pointer-events-none">
+                        <h4 class="text-cc_purpura font-black text-2xl mb-2">En la esencia más pura y contradictoria del alma: Soledad Mautone abre el ciclo de exposiciones 2026 del Centro Cultural</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">En la noche de ayer, en el hall de UTU Central, con un público expectante y un espectáculo musical de blues como cierre, se inauguró la muestra Salvaje dentro; marcados por el instinto.</p>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="news-item flex-[0_0_80vw] px-2 md:px-4" data-index="2">
+                    <div class="relative h-[500px] md:h-[600px] overflow-hidden group transition-all duration-500">
+                    <img src="https://www.utu.edu.uy/wp-content/uploads/2025/12/DSC06482-1024x683.jpg" class="w-full h-full object-cover grayscale transition-all duration-700 group-[.active]:grayscale-0 group-[.active]:scale-105" alt="Noticia 3">
+                    <div class="news-content absolute bottom-10 left-0 bg-white/95 p-8 max-w-[85%] md:max-w-[60%] opacity-0 translate-y-10 transition-all duration-500 group-[.active]:opacity-100 group-[.active]:translate-y-0 delay-300 pointer-events-none">
+                        <h4 class="text-cc_purpura font-black text-2xl mb-2">Museos en la Noche: identidad afrouruguaya, arte y participación comunitaria en UTU</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">El Centro Cultural Dr. Pedro Figari de UTU abrió sus puertas para una nueva edición de esta actividad, que combinó visitas guiadas, actividades para niños y niñas, narración, música en vivo y danza afrouruguaya. La propuesta celebró la identidad cultural con una destacada participación de familias y vecinos de la zona.</p>
+                    </div>
+                    </div>
+                </div>
+
+                </div>
+
+                <button id="prev-news" class="absolute left-[2%] top-1/2 -translate-y-1/2 z-50 bg-white hover:bg-cc_purpura text-cc_purpura hover:text-white p-4 rounded-full backdrop-blur-md transition-all">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button id="next-news" class="absolute right-[2%] top-1/2 -translate-y-1/2 z-50 bg-white hover:bg-cc_purpura text-cc_purpura hover:text-white p-4 rounded-full backdrop-blur-md transition-all">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </section>
+
+        
+        <!-- la cultura en el centro -->
+        <section id="podcast" class="relative w-full h-auto md:h-auto flex items-center overflow-hidden py-16">
+        <div class="absolute inset-0 z-0">
+            <img src="src/images/home/UTU_7777.webp" class="w-full h-full object-cover" alt="Ambiente Centro Cultural">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10 items-center">
+            
+            <div class="flex flex-col lg:w-4/5">
+            <div class="bg-white p-8 md:p-10 shadow-2xl transform w-full">
+                <h2 class="text-[20px] font-light text-anep_black leading-tight">
+                Mirá todos los episodios de <br>
+                <span class="font-bold text-cc_purpura italic text-3xl md:text-[30px]">La Cultura en el Centro</span> 
+                en YouTube o escuchalos en Spotify.
+                </h2>
+            </div>
+            
+            <div class="flex items-center gap-4 bg-cc_purpura p-4">
+
+                <a href="#" class="hover:scale-110 transition-transform">
+                    <svg class="h-8" viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>youtube [#168]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289" id="youtube-[#168]"> </path> </g> </g> </g> </g></svg>
+                </a>
+                <a href="#" class="hover:scale-110 transition-transform">
+                    <svg class="h-8" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>spotify [#ffffff]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-140.000000, -7479.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M99.915,7327.865 C96.692,7325.951 91.375,7325.775 88.297,7326.709 C87.803,7326.858 87.281,7326.58 87.131,7326.085 C86.981,7325.591 87.26,7325.069 87.754,7324.919 C91.287,7323.846 97.159,7324.053 100.87,7326.256 C101.314,7326.52 101.46,7327.094 101.196,7327.538 C100.934,7327.982 100.358,7328.129 99.915,7327.865 L99.915,7327.865 Z M99.81,7330.7 C99.584,7331.067 99.104,7331.182 98.737,7330.957 C96.05,7329.305 91.952,7328.827 88.773,7329.792 C88.36,7329.916 87.925,7329.684 87.8,7329.272 C87.676,7328.86 87.908,7328.425 88.32,7328.3 C91.951,7327.198 96.466,7327.732 99.553,7329.629 C99.92,7329.854 100.035,7330.334 99.81,7330.7 L99.81,7330.7 Z M98.586,7333.423 C98.406,7333.717 98.023,7333.81 97.729,7333.63 C95.381,7332.195 92.425,7331.871 88.944,7332.666 C88.609,7332.743 88.274,7332.533 88.198,7332.197 C88.121,7331.862 88.33,7331.528 88.667,7331.451 C92.476,7330.58 95.743,7330.955 98.379,7332.566 C98.673,7332.746 98.766,7333.129 98.586,7333.423 L98.586,7333.423 Z M94,7319 C88.477,7319 84,7323.477 84,7329 C84,7334.523 88.477,7339 94,7339 C99.523,7339 104,7334.523 104,7329 C104,7323.478 99.523,7319.001 94,7319.001 L94,7319 Z" id="spotify-[#ffffff]"> </path> </g> </g> </g> </g></svg>
+                </a>
+            </div>
+            </div>
+
+            <div class="bg-white/90 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-8 md:p-12 rounded-sm border-t-4 border-cc_purpura">
+            <ul class="divide-y divide-gray-200">
+                <li class="py-5 flex justify-between items-center group cursor-pointer hover:bg-gray-50/50 transition-colors px-4 -mx-4">
+                <div class="flex flex-col">
+                    <span class="text-cc_purpura font-bold text-xs uppercase tracking-tighter opacity-70">Ep. 1</span>
+                    <span class="text-anep_black font-bold text-lg group-hover:text-cc_purpura transition-colors">Juan Casanova</span>
+                </div>
+                <span class="text-gray-400 font-mono text-sm">53:20</span>
+                </li>
+                
+                <li class="py-5 flex justify-between items-center group cursor-pointer hover:bg-gray-50/50 transition-colors px-4 -mx-4">
+                <div class="flex flex-col">
+                    <span class="text-cc_purpura font-bold text-xs uppercase tracking-tighter opacity-70">Ep. 2</span>
+                    <span class="text-anep_black font-bold text-lg group-hover:text-cc_purpura transition-colors">Pedro Dalton</span>
+                </div>
+                <span class="text-gray-400 font-mono text-sm">53:20</span>
+                </li>
+
+                <li class="py-5 flex justify-between items-center group cursor-pointer hover:bg-gray-50/50 transition-colors px-4 -mx-4">
+                <div class="flex flex-col">
+                    <span class="text-cc_purpura font-bold text-xs uppercase tracking-tighter opacity-70">Ep. 3</span>
+                    <span class="text-anep_black font-bold text-lg group-hover:text-cc_purpura transition-colors">Chabela Ramírez</span>
+                </div>
+                <span class="text-gray-400 font-mono text-sm">53:20</span>
+                </li>
+
+                <li class="py-5 flex justify-between items-center group cursor-pointer hover:bg-gray-50/50 transition-colors px-4 -mx-4">
+                <div class="flex flex-col">
+                    <span class="text-cc_purpura font-bold text-xs uppercase tracking-tighter opacity-70">Ep. 4</span>
+                    <span class="text-anep_black font-bold text-lg group-hover:text-cc_purpura transition-colors">Jorge Bafico</span>
+                </div>
+                <span class="text-gray-400 font-mono text-sm">53:20</span>
+                </li>
+
+                <li class="py-5 flex justify-between items-center group cursor-pointer hover:bg-gray-50/50 transition-colors px-4 -mx-4">
+                <div class="flex flex-col">
+                    <span class="text-cc_purpura font-bold text-xs uppercase tracking-tighter opacity-70">Ep. 5</span>
+                    <span class="text-anep_black font-bold text-lg group-hover:text-cc_purpura transition-colors">Juan Casanova</span>
+                </div>
+                <span class="text-gray-400 font-mono text-sm">53:20</span>
+                </li>
+            </ul>
+            
+            <button class="w-full mt-8 bg-cc_purpura text-white py-4 font-bold text-xs tracking-widest uppercase hover:bg-purple-900 transition-colors">
+                Ver todos los episodios
+            </button>
+            </div>
+
+        </div>
+        </section>
+
+        <!-- proyectos editoriales, conservacion y restauracion -->
+        <!--
+        Rediseño portrait: imagen en la mitad superior (aspect-ratio 3/4),
+        texto e interaccion en la mitad inferior. Las 2 tarjetas se desfasan verticalmente.
+        -->
+        <section id="proyectos" class="py-20 px-6 bg-neutral-100">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div class="border-l-4 border-cc_gold pl-6">
+                <p class="text-[10px] uppercase tracking-[0.35em] text-cc_purpura font-bold mb-1">Texto · Texto</p>
+                <h2 class="text-3xl md:text-4xl font-light text-anep_black tracking-tight">
+                Texto <span class="font-bold text-cc_purpura">Texto</span> Texto
+                </h2>
+            </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+
+            <!-- Tarjeta: Proyectos Editoriales -->
+            <div class="group flex flex-col bg-white shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden border-b-4 border-transparent hover:border-cc_purpura">
+                <div class="relative overflow-hidden" style="aspect-ratio: 3/4; max-height: 420px;">
+                <img src="src/images/proyectos/UTU_4933.webp"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                    alt="Proyectos Editoriales">
+                <div class="absolute inset-0 bg-cc_purpura/60 opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                <div class="absolute top-4 left-4">
+                    <span class="bg-cc_purpura text-white text-[9px] font-black uppercase tracking-widest px-3 py-1">Editorial</span>
+                </div>
+                </div>
+                <div class="p-8 flex flex-col flex-1 justify-between">
+                <div>
+                    <span class="material-symbols-outlined text-cc_purpura text-4xl mb-4 block">menu_book</span>
+                    <h3 class="text-2xl font-bold text-cc_purpura mb-3">Proyectos Editoriales</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm mb-6">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat esse cum repudiandae explicabo quam expedita!
+                    </p>
+                </div>
+                <button class="px-6 py-3 bg-cc_purpura text-white font-bold text-xs uppercase tracking-widest hover:bg-cc_gold transition-colors w-full">
+                    Explorar Catálogo
+                </button>
+                </div>
+            </div>
+
+            <!-- Tarjeta: Conservacion y Restauracion (desfasada hacia abajo) -->
+            <div class="group flex flex-col bg-white shadow-md hover:shadow-2xl transition-all duration-500 overflow-hidden border-b-4 border-transparent hover:border-cc_gold md:mt-14">
+                <div class="relative overflow-hidden" style="aspect-ratio: 3/4; max-height: 420px;">
+                <img src="src/images/proyectos/UTU_1495.webp"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                    alt="Conservacion y Restauracion">
+                <div class="absolute inset-0 bg-cc_gold/60 opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                <div class="absolute top-4 left-4">
+                    <span class="bg-cc_gold text-white text-[9px] font-black uppercase tracking-widest px-3 py-1">Restauración</span>
+                </div>
+                </div>
+                <div class="p-8 flex flex-col flex-1 justify-between">
+                <div>
+                    <span class="material-symbols-outlined text-cc_gold text-4xl mb-4 block">handyman</span>
+                    <h3 class="text-2xl font-bold text-cc_purpura mb-3">Conservación y Restauración</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm mb-6">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero omnis totam praesentium, ea ad illum.
+                    </p>
+                </div>
+                <button class="px-6 py-3 bg-cc_gold text-white font-bold text-xs uppercase tracking-widest hover:bg-cc_purpura transition-colors w-full">
+                    Conocer el Laboratorio
+                </button>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        </section>
+
+        <!-- galeria de obras -->
+        <!--
+        Galeria interactiva tipo lightbox: muestra thumbnails en grilla asimetrica.
+        Al click abre modal con imagen grande + nombre de obra y autor.
+        Datos de obras en array JS. Facil de ampliar desde WordPress/PHP.
+        -->
+        <section id="galeria" class="py-20 px-6 bg-anep_black">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Encabezado -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+            <div class="border-l-4 border-cc_pink pl-6">
+                <p class="text-[10px] uppercase tracking-[0.35em] text-cc_pink font-bold mb-1">Texto texto texto</p>
+                <h2 class="text-3xl md:text-4xl font-light text-white tracking-tight">
+                Galería de <span class="font-bold text-cc_pink">Obras</span>
+                </h2>
+            </div>
+            <p class="text-white/50 text-sm max-w-sm leading-relaxed">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita nobis dolore, minima voluptatem fuga quam!
+            </p>
+            </div>
+
+            <!-- Grilla masonry-like (asimétrica con CSS Grid) -->
+            <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[180px]">
+            <!-- Las cards se generan con JS abajo -->
+            </div>
+
+            <!-- Botón ver más -->
+            <div class="mt-10 text-center">
+            <button class="border border-white/30 text-white hover:bg-white hover:text-anep_black px-10 py-3 font-bold text-xs uppercase tracking-widest transition-all duration-300">
+                Ver colección completa
+            </button>
+            </div>
+
+        </div>
+        </section>
+
+        <!-- Modal lightbox para la galeria -->
+        <div id="gallery-modal" class="fixed inset-0 z-[200] hidden items-center justify-center p-4 md:p-10">
+        <div id="modal-overlay" class="absolute inset-0 bg-black/90 backdrop-blur-sm"></div>
+        <div class="relative z-10 max-w-4xl w-full bg-anep_black border border-white/10 shadow-2xl flex flex-col md:flex-row overflow-hidden">
+            <!-- Imagen grande -->
+            <div class="md:w-2/3 relative" style="min-height: 320px;">
+            <img id="modal-img" src="" alt="" class="w-full h-full object-cover">
+            </div>
+            <!-- Info obra -->
+            <div class="md:w-1/3 p-8 flex flex-col justify-between bg-neutral-900">
+            <div>
+                <span class="text-cc_pink text-[10px] uppercase tracking-[0.3em] font-bold block mb-4">Obra</span>
+                <h3 id="modal-title" class="text-white text-2xl font-bold leading-tight mb-2"></h3>
+                <p id="modal-author" class="text-white/50 text-sm mb-4"></p>
+                <p id="modal-desc" class="text-white/70 text-sm leading-relaxed"></p>
+            </div>
+            <div class="mt-8 flex flex-col gap-3">
+                <button class="bg-cc_purpura text-white py-3 font-bold text-xs uppercase tracking-widest hover:bg-cc_pink transition-colors">
+                Ver ficha completa
+                </button>
+            </div>
+            </div>
+            <!-- Botón cerrar -->
+            <button id="modal-close" class="absolute top-4 right-4 text-white/70 hover:text-white hover:rotate-90 transition-all z-20">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+        </div>
+
+    </main>
+
+    <!-- pie de pagina -->
+    <footer class="w-full mt-0 bg-anep_black md:mt-5 lg:mt-[1px] p-10 mb-0 2xl:mx-auto">
+        <div class="max-w-7xl mx-auto">
+        <!-- cont superior -->
+        <div class="w-full grid grid-cols-1 gap-y-10 md:gap-y-0 md:grid-cols-2 gap-x-16">
+            <!-- logo y redes-->
+            <div class="flex flex-col gap-y-10 pr-[5%]">
+            <img class="max-w-96" src="src/images/logos/Logo nuevo-09.png" alt="">
+            <p class="font-montserrat text-white text-xs leading-5">La Dirección General de Educación Técnico Profesional – UTU integra la Administración Nacional de Educación Pública (ANEP), ofreciendo educación técnica y tecnológica de nivel medio y terciario, y formación profesional básica y superior en todo el territorio del Uruguay, sobre la base de los principios de gratuidad, laicidad e igualdad.</p>
+            <ul class="gap-x-3 flex-row md:mt-0  flex brightness-50 md:brightness-100">
+                <li><svg class="h-6 aspect-square" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24"><!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free--><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22 22 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202z"></path></svg></li>
+                <li><svg class="h-6 aspect-square" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24"><!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free--><path d="M4.983 2.821a2.188 2.188 0 1 0 0 4.376 2.188 2.188 0 1 0 0-4.376M9.237 8.855v12.139h3.769v-6.003c0-1.584.298-3.118 2.262-3.118 1.937 0 1.961 1.811 1.961 3.218v5.904H21v-6.657c0-3.27-.704-5.783-4.526-5.783-1.835 0-3.065 1.007-3.568 1.96h-.051v-1.66zm-6.142 0H6.87v12.139H3.095z"></path></svg></li>
+                <li><svg class="h-6 aspect-square" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248m0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008M16.806 6.129a1.078 1.078 0 1 0 0 2.156 1.078 1.078 0 1 0 0-2.156"></path><path d="M20.533 6.111A4.6 4.6 0 0 0 17.9 3.479a6.6 6.6 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.6 6.6 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.6 6.6 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71s0 2.753.056 3.71c.015.748.156 1.486.419 2.187a4.6 4.6 0 0 0 2.634 2.632 6.6 6.6 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.6 6.6 0 0 0 2.186-.419 4.61 4.61 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.6 6.6 0 0 0-.421-2.217m-1.218 9.532a5 5 0 0 1-.311 1.688 2.99 2.99 0 0 1-1.712 1.711 5 5 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a5 5 0 0 1-1.669-.311 2.99 2.99 0 0 1-1.719-1.711 5.1 5.1 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654s0-2.686.053-3.655a5 5 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5 5 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a5 5 0 0 1 1.67.311 3 3 0 0 1 1.712 1.712 5.1 5.1 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655s0 2.698-.043 3.654z"></path></svg></li>
+                <li><svg class="h-6 aspect-square" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24"><!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free--><path d="M21.593 7.203a2.5 2.5 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.52 2.52 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831M9.996 15.005l.005-6 5.207 3.005z"></path></svg></li>
+                <li><svg class="h-6 aspect-square" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ffffff" viewBox="0 0 24 24"><!--Boxicons v3.0 https://boxicons.com | License  https://docs.boxicons.com/free--><path d="M13.68 10.62 20.24 3h-1.55L13 9.62 8.45 3H3.19l6.88 10.01L3.19 21h1.55l6.01-6.99 4.8 6.99h5.24l-7.13-10.38Zm-2.13 2.47-.7-1-5.54-7.93H7.7l4.47 6.4.7 1 5.82 8.32H16.3z"></path></svg></li>
+            </ul>
+            </div>
+
+            <!-- institucional y contacto-->
+            <div class="flex flex-col md:flex-row gap-y-10 md:gap-y-0 gap-x-6 md:gap-x-16">
+                <div>
+                <h3 class="text-lg font-semibold uppercase tracking-widest mb-4 text-white font-montserrat">Institucional</h3>
+                <ul class="space-y-2 text-xs leading-relaxed font-montserrat text-anep_gray">
+                    <li><a href="#" class="hover:text-[#f09819] transition-colors">Presentación</a></li>
+                    <li><a href="#" class="hover:text-[#f09819] transition-colors">Autoridades</a></li>
+                    <li><a href="#" class="hover:text-[#f09819] transition-colors">Centros educativos</a></li>
+                    <li><a href="#" class="hover:text-[#f09819] transition-colors">Guía de oficinas</a></li>
+                    <li><a href="#" class="hover:text-[#f09819] transition-colors">Inspección</a></li>
+                    <li><a href="#" class="hover:text-[#f09819] transition-colors">Campus</a></li>
+                    <li><a href="#" class="hover:text-[#f09819] transition-colors">Archivo digital</a></li>
+                </ul>
+
+                <h3 class="font-semibold uppercase tracking-widest mb-4 text-white font-montserrat mt-8 text-xs">Subsistemas educativos</h3>
+                <ul class="space-y-2 text-xs leading-relaxed font-montserrat text-anep_gray">
+                    <li><p><a href="https://www.dgeip.edu.uy/documentos/2023/portal/index.html" target="_blank" class="hover:text-[#f09819] transition-colors">Dirección General de Educación Primaria</a></p></li>
+                    <li><p><a href="https://www.dges.edu.uy/" target="_blank" class="hover:text-[#f09819] transition-colors">Dirección General de Educación Secundaria</a></p></li>
+                    <li><p><a href="https://www.utu.edu.uy/" target="_blank" class="hover:text-[#f09819] transition-colors">Dirección General de Educación Técnico Profesional</a></p></li>
+                    <li><p><a href="https://www.cfe.edu.uy/" target="_blank" class="hover:text-[#f09819] transition-colors">Consejo de Formación en Educación</a></p></li>
+                </ul>
+
+                </div>
+
+                <div>
+                <h3 class="text-lg font-semibold uppercase tracking-widest mb-4 text-white font-montserrat">Contacto</h3>
+                <ul class="space-y-2 text-xs leading-relaxed font-montserrat text-anep_gray">
+                    <li><p><span class="font-bold">San Salvador 1674</span>, Montevideo, Uruguay</p></li>
+                    <li><p><a href="https://www.utu.edu.uy" target="_blank" class="hover:text-[#f09819] transition-colors">www.utu.edu.uy</a></p></li>
+                </ul>
+
+                <h3 class="font-semibold uppercase tracking-widest mb-4 text-white font-montserrat mt-8 text-xs">Informes</h3>
+                <ul class="space-y-2 text-xs leading-relaxed font-montserrat text-anep_gray">
+                    <li><p>(+598) 2410 7971</p></li>
+                    <li><a href="/cdn-cgi/l/email-protection#e2979697a2979697cc878697cc979b" class="hover:text-[#f8e71d] transition-colors"><span class="__cf_email__" data-cfemail="71040504310405045f1415045f0408">[email&#160;protected]</span></a></li>
+                </ul>
+
+                <h3 class="font-semibold uppercase tracking-widest mb-4 text-white font-montserrat mt-8 text-xs">Información de cursos</h3>
+                <ul class="space-y-2 text-xs leading-relaxed font-montserrat text-anep_gray">
+                    <li><p><a href="https://www.utu.edu.uy" target="_blank" class="hover:text-[#f09819] transition-colors">Estudia en UTU</a></p></li>
+                    <li><p>(+598) 0800 8155</p></li>
+                    <li><p>(+598) 2410 7972</p></li>
+                    <li><p><a href="/cdn-cgi/l/email-protection#1c75727a736e717d68795c69686932797869326965" class="hover:text-[#f8e71d] transition-colors"><span class="__cf_email__" data-cfemail="6e070008011c030f1a0b2e1b1a1b400b0a1b401b17">[email&#160;protected]</span></a></p></li>
+                </ul>
+                </div>
+                
+
+
+            </div>
+        </div>
+
+        <hr class="w-full my-8">
+
+        <div class="w-full flex flex-col md:flex-row justify-between items-center text-xs text-white/80">
+            <p>© 2025 Universidad del Trabajo del Uruguay (UTU). Todos los derechos reservados.</p>
+            <div class="flex gap-4 mt-3 md:mt-0">
+            <a href="#" class="hover:text-[#f09819] transition-colors text-center md:text-left">Accesibilidad</a>
+            <a href="#" class="hover:text-[#f09819] transition-colors text-center md:text-left">Política de privacidad</a>
+            <a href="#" class="hover:text-[#f09819] transition-colors text-center md:text-left">Mapa del sitio</a>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <!-- nav posicionador home -->
+    <nav id="scrollspy" class="fixed right-6 top-1/2 -translate-y-1/2 z-[90] hidden lg:flex flex-col items-center gap-6">
+        <div class="absolute w-[2px] h-full bg-gray-300 -z-10">
+        <div id="spy-line" class="w-full bg-cc_purpura transition-all duration-300 origin-top scale-y-0"></div>
+        </div>
+
+        <a href="#presentacion" class="spy-dot group relative flex items-center justify-center">
+        <span class="w-3 h-3 bg-white border-2 border-gray-400 rounded-full transition-all group-[.active]:border-cc_purpura group-[.active]:bg-cc_purpura group-[.active]:scale-125"></span>
+        <span class="absolute right-8 px-2 py-1 bg-cc_purpura text-white text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity rounded-sm whitespace-nowrap">Presentación</span>
+        </a>
+
+        <a href="#horarios" class="spy-dot group relative flex items-center justify-center">
+        <span class="w-3 h-3 bg-white border-2 border-gray-400 rounded-full transition-all group-[.active]:border-cc_purpura group-[.active]:bg-cc_purpura group-[.active]:scale-125"></span>
+        <span class="absolute right-8 px-2 py-1 bg-cc_purpura text-white text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity rounded-sm whitespace-nowrap">Horarios</span>
+        </a>
+
+        <a href="#noticias" class="spy-dot group relative flex items-center justify-center">
+        <span class="w-3 h-3 bg-white border-2 border-gray-400 rounded-full transition-all group-[.active]:border-cc_purpura group-[.active]:bg-cc_purpura group-[.active]:scale-125"></span>
+        <span class="absolute right-8 px-2 py-1 bg-cc_purpura text-white text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity rounded-sm whitespace-nowrap">Noticias</span>
+        </a>
+
+        <a href="#podcast" class="spy-dot group relative flex items-center justify-center">
+        <span class="w-3 h-3 bg-white border-2 border-gray-400 rounded-full transition-all group-[.active]:border-cc_purpura group-[.active]:bg-cc_purpura group-[.active]:scale-125"></span>
+        <span class="absolute right-8 px-2 py-1 bg-cc_purpura text-white text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity rounded-sm whitespace-nowrap">La Cultura en el Centro</span>
+        </a>
+
+        <a href="#proyectos" class="spy-dot group relative flex items-center justify-center">
+        <span class="w-3 h-3 bg-white border-2 border-gray-400 rounded-full transition-all group-[.active]:border-cc_purpura group-[.active]:bg-cc_purpura group-[.active]:scale-125"></span>
+        <span class="absolute right-8 px-2 py-1 bg-cc_purpura text-white text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity rounded-sm whitespace-nowrap">Proyectos</span>
+        </a>
+
+        <a href="#galeria" class="spy-dot group relative flex items-center justify-center">
+        <span class="w-3 h-3 bg-white border-2 border-gray-400 rounded-full transition-all group-[.active]:border-cc_pink group-[.active]:bg-cc_pink group-[.active]:scale-125"></span>
+        <span class="absolute right-8 px-2 py-1 bg-cc_pink text-white text-[10px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity rounded-sm whitespace-nowrap">Galería</span>
+        </a>
+    </nav>
+
+
+
+    
+
+        <script src="src/scripts/noticiasHome.js"></script>
+        <script src="src/scripts/menu.js"></script>
+        <script src="src/scripts/navHome.js"></script>
+        <script src="src/scripts/galeria.js"></script>
+    </body>
+</html>
