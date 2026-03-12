@@ -60,6 +60,7 @@ module.exports = {
           cc_purpura: "#5A1541",
           cc_pink: "#E83D88",
           cc_gold: "#9D8C5E",
+          cc_puerta_orange_light: "#eb9645",
 
 
         // Cremas (fondos cálidos suaves)
